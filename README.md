@@ -32,6 +32,8 @@ Follow the steps to create your own AWS Greengrass Group and Greengrass Core.
 
 Prepare **three** PYNQ board, and run **button.py**, **sensor.py** and **Greengrass Core** on them seperately.
 
+![](https://github.com/xupsh/PYNQ_GreenGrass/blob/master/image/DEMO.png)
+
 Before running, mention to update your own AWS endpoint and AWS authority keys in the codes.
 
 NOTE: Run as root.
