@@ -34,6 +34,24 @@ Prepare **three** PYNQ board, and run **button.py**, **sensor.py** and **Greengr
 
 ![](https://github.com/xupsh/PYNQ_GreenGrass/blob/master/image/DEMO.png)
 
+On **Control** board
+
+```shell
+sudo python3 button.py &
+```
+
+On **Sensor** board
+
+```shell
+sudo python3 sensor.py
+```
+
+On **Core** board
+
+Simplely run your greengrass core.
+
+
+
 Before running, mention to update your own AWS endpoint and AWS authority keys in the codes.
 
 NOTE: Run as root.
