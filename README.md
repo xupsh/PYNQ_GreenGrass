@@ -22,7 +22,7 @@
 
 > > sudo pip3 install git+https://github.com/xupsh/pynq-sense-hat.git
 
-![**sensor** board](https://github.com/xupsh/PYNQ_GreenGrass/blob/master/image/sensor_borad.jpeg)
+![sensor board](https://github.com/xupsh/PYNQ_GreenGrass/blob/master/image/sensor_board.jpeg)
 
 ## Greengrass Core
 
