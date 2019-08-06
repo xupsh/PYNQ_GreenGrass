@@ -25,10 +25,10 @@ print (local_ip)
 myMQTTClient = AWSIoTMQTTClient("pynq_controller")
 
 #Here to put your own endpoint
-myMQTTClient.configureEndpoint("ai57r4nger0el-ats.iot.us-east-2.amazonaws.com", 443)
+myMQTTClient.configureEndpoint("xxxx.amazonaws.com", 443)
 
 #Here to put your own files
-myMQTTClient.configureCredentials("root-ca-cert.pem", "4833be86ed.private.key", "4833be86ed.cert.pem")
+myMQTTClient.configureCredentials("root-ca-cert.pem", "xxxx.private.key", "xxxx.cert.pem")
 myMQTTClient.configureOfflinePublishQueueing(-1)  # Infinite offline Publish queueing
 myMQTTClient.configureDrainingFrequency(2)  # Draining: 2 Hz
 myMQTTClient.configureConnectDisconnectTimeout(10)  # 10 sec
