@@ -27,7 +27,7 @@ AWS IoT Greengrass provides secure, over-the-air software updates of Lambda func
   sudo addgroup --system ggc_group
   ```
 - In our lab, we will have one board used as core, two boards as device (one board used as publisher and the other used as subscriber).
-- For the core, you have to follow [module2](https://docs.aws.amazon.com/zh_cn/greengrass/latest/developerguide/module2.html) to set your board.  
+- For the core, you have to follow [module2](https://docs.aws.amazon.com/zh_cn/greengrass/latest/developerguide/module2.html) to create your group and set your core board.  
 After this step, you will see the following picture in your AWS monitor. And the core process is running in your core board.
 ![Group Created](https://docs.aws.amazon.com/greengrass/latest/developerguide/images/gg-get-started-009.2.png)
 - Now configure two devices in AWS web.  
