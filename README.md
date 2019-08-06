@@ -30,12 +30,12 @@ AWS IoT Greengrass provides secure, over-the-air software updates of Lambda func
 - For the core, you have to follow [module2](https://docs.aws.amazon.com/zh_cn/greengrass/latest/developerguide/module2.html) to create your group and set your core board.  
 After this step, you will see the following picture in your AWS monitor. And the core process is running in your core board.
 ![Group Created](https://docs.aws.amazon.com/greengrass/latest/developerguide/images/gg-get-started-009.2.png)
-- Now configure two devices in AWS web.  
+- Configure two devices in AWS web.  
 ![Devices](https://docs.aws.amazon.com/greengrass/latest/developerguide/images/gg-get-started-065.5.png)  
 First follow [Create AWS IoT Devices in an AWS IoT Greengrass Group](https://docs.aws.amazon.com/greengrass/latest/developerguide/device-group.html) to create your two devices. And then [Configure Subscriptions](https://docs.aws.amazon.com/greengrass/latest/developerguide/config-subs.html). Now you will see the group has been deployed successfully.  
 - Then you have to [Install the AWS IoT Device SDK for Python](https://docs.aws.amazon.com/greengrass/latest/developerguide/IoT-SDK.html) in your two device boards.  
-In this lab, we won't use basicDiscovery.py in AWS tutorial. We will use button.py and sensor.py, you can find them in this respository. Now copy the button.py to your publisher board and sensor.py to your subscriber board. Remember to copy the .py file to the folder that contains the HelloWorld_Publisher and HelloWorld_Subscriber device certificates files.  
-- Now edit the button.py&sensor.py, find places "xxxx" and replace them with your own settings. You can refer to [this](https://docs.aws.amazon.com/greengrass/latest/developerguide/test-comms.html) to find what 'xxxx' should be.
+In this lab, we won't use basicDiscovery.py in AWS tutorial. We will use button.py and sensor.py instead, you can find them in this respository. Copy the button.py to your publisher board and sensor.py to your subscriber board. Remember to copy the .py file to the folder that contains the HelloWorld_Publisher and HelloWorld_Subscriber device certificates files.  
+- Edit the button.py&sensor.py, find places "xxxx" and replace them with your own settings. You can refer to [this](https://docs.aws.amazon.com/greengrass/latest/developerguide/test-comms.html) to find what 'xxxx' should be.
 - In publisher board, run:
   ```shell
   sudo python3 button.py
