@@ -21,7 +21,11 @@ AWS IoT Greengrass provides secure, over-the-air software updates of Lambda func
 ## Step by Step
 - The following steps you can refer to [this](https://pynq.readthedocs.io/en/v2.4/getting_started/pynq_z2_setup.html).
 - Conncet your boards and your pc to your switch through LAN(In your switch). Conncet WAN(In your switch) to the Internet.
-- Conncet your boards to your pc through usb using serial link. Run ipconfig in the terminals opened for boards and find your boards' ips.
+- Conncet your boards to your pc through usb using serial link. Run 
+  ```shell
+  hostname -I 
+  ```  
+  in the terminals opened for boards and find your boards' ips.
 - Close the serial link windows and using ssh to connect to your boards.
 - Run the following commands on all boards.
   ```shell
