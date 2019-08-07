@@ -17,17 +17,23 @@ AWS IoT Greengrass provides secure, over-the-air software updates of Lambda func
 - > 3 PYNQ-Z2  
   > AWS account  
   > 1 switch  
-- Connect to your boards successfully.
-- Make sure your boards can access internet.
 ## Step by Step
-- [Connect to your board](https://pynq.readthedocs.io/en/v2.4/getting_started/pynq_z2_setup.html).
+- > The following steps you can refer to [this](https://pynq.readthedocs.io/en/v2.4/getting_started/pynq_z2_setup.html).
+  > Conncet your boards and your pc to your switch through LAN(In your switch). Conncet WAN(In your switch) to the Internet.
+  > Conncet your boards to your pc through usb using serial link. Run ipconfig in the terminals opened for boards and find your boards' ips.
+  > Close the serial link windows and using ssh to connect to your boards.
 - Run the following commands on all boards.
   ```shell
   sudo adduser --system ggc_user
   sudo addgroup --system ggc_group
   ```
 - In our lab, we will have one board used as core, two boards as device (one board used as publisher and the other used as subscriber).
-- For the core, you have to follow [module2](https://docs.aws.amazon.com/zh_cn/greengrass/latest/developerguide/module2.html) to create your group and set your core board.  
+- > Create your group and set your core board.  
+  > Sign in to the AWS Management Console on your computer and open the AWS IoT Core console. If this is your first time opening this console, choose Get started.
+Choose Greengrass.  
+![choose greengrass](https://docs.aws.amazon.com/greengrass/latest/developerguide/images/console-greengrass.png)
+If you don't see the Greengrass node in the navigation pane, change to an AWS Region that supports AWS IoT Greengrass. For the list of supported regions, see AWS Regions and Endpoints in the AWS General Reference.
+  > 
 After this step, you will see the following picture in your AWS monitor. And the core process is running in your core board.
 ![Group Created](https://docs.aws.amazon.com/greengrass/latest/developerguide/images/gg-get-started-009.2.png)
 - Configure two devices in AWS web.  
