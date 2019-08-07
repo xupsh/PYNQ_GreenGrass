@@ -118,12 +118,12 @@ Each group requires a core, which is a device that manages local IoT processes. 
     >> On the group configuration page, choose Subscriptions, and then choose Add Subscription.
     Configure the subscription.
     >>> Under Select a source, choose Devices, and then choose HelloWorld_Publisher.
-    Under Select a target, choose Devices, and then choose HelloWorld_Subscriber.
-    Choose Next.  
+    >>> Under Select a target, choose Devices, and then choose HelloWorld_Subscriber.
+    >>> Choose Next.  
     ![sb](https://docs.aws.amazon.com/greengrass/latest/developerguide/images/gg-get-started-072.png)  
     > For Topic filter, enter hello/world/pubsub, choose Next, and then choose Finish.  
-    Make sure that the AWS IoT Greengrass daemon is running, as described in Deploy Cloud Configurations to a Core Device.  
-    On the group configuration page, from Actions, choose Deploy.  
+    > Make sure that the AWS IoT Greengrass daemon is running, as described in Deploy Cloud Configurations to a Core Device.  
+    > On the group configuration page, from Actions, choose Deploy.  
     ![dp](https://docs.aws.amazon.com/greengrass/latest/developerguide/images/gg-get-started-040.png)  
     > Then you have to Install the AWS IoT Device SDK for Python.
     Run the following commands to install the AWS IoT Device SDK for Python:  
