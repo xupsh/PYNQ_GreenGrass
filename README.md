@@ -84,10 +84,55 @@ Each group requires a core, which is a device that manages local IoT processes. 
   sudo ./greengrassd start
   ```  
   You should see a Greengrass successfully started message.  
-- Configure two devices in AWS web.  
-![Devices](https://docs.aws.amazon.com/greengrass/latest/developerguide/images/gg-get-started-065.5.png)  
-First follow [Create AWS IoT Devices in an AWS IoT Greengrass Group](https://docs.aws.amazon.com/greengrass/latest/developerguide/device-group.html) to create your two devices. And then [Configure Subscriptions](https://docs.aws.amazon.com/greengrass/latest/developerguide/config-subs.html). Now you will see the group has been deployed successfully.  
-- Then you have to [Install the AWS IoT Device SDK for Python](https://docs.aws.amazon.com/greengrass/latest/developerguide/IoT-SDK.html) in your two device boards.  
+- Configure two devices in AWS web. This part you can refer to [this](https://docs.aws.amazon.com/greengrass/latest/developerguide/module4.html)   
+  > First Create AWS IoT Devices in an AWS IoT Greengrass Group
+  > In the AWS IoT Core console, choose Greengrass, choose Groups, and then choose your group.  
+    On the group configuration page, choose Devices, and then choose Add your first Device.  
+    ![CD](https://docs.aws.amazon.com/greengrass/latest/developerguide/images/gg-get-started-066.png)  
+    Choose Create New Device.  
+    ![ND](https://docs.aws.amazon.com/greengrass/latest/developerguide/images/gg-get-started-067.png)  
+    Register this device as HelloWorld_Publisher, and then choose Next.  
+    ![RD](https://docs.aws.amazon.com/greengrass/latest/developerguide/images/gg-get-started-068.png)  
+    For 1-Click, choose Use Defaults. This option generates a device certificate with attached AWS IoT policy and public and private key.  
+    ![1C](https://docs.aws.amazon.com/greengrass/latest/developerguide/images/gg-get-started-069.png)  
+    Create a folder on your computer. Download the certificate and keys for your device into the folder.  
+    ![CF](https://docs.aws.amazon.com/greengrass/latest/developerguide/images/gg-get-started-070.png)  
+    Make a note of the common hash component in the file names for the HelloWorld_Publisher device certificate and keys (in this example, bcc5afd26d). You need it later. Choose Finish.  
+    Decompress the hash-setup.tar.gz file. For example, run the following command:  
+    ```shell
+    tar -xzf hash-setup.tar.gz
+    ```  
+    Choose Add Device and repeat steps 3 - 7 to add a new device to the group.  
+    Name this device HelloWorld_Subscriber. Download the certificates and keys for the device to your computer. Save and decompress them in the same folder that you created for HelloWorld_Publisher.  
+    Again, make a note of the common hash component in the file names for the HelloWorld_Subscriber device.  
+    You should now have two devices in your AWS IoT Greengrass group:  
+    ![tg](https://docs.aws.amazon.com/greengrass/latest/developerguide/images/gg-get-started-071.png)  
+    Save the root CA certificate as root-ca-cert.pem in the same folder as the certificates and keys for both devices.  
+    ```shell
+    cd path-to-folder-containing-device-certificates
+    curl -o ./root-ca-cert.pem https://www.amazontrust.com/repository/AmazonRootCA1.pem
+    ```  
+    If you meet some net issues here, don't be afraid, you can use the root-ca-cert.pem you downloaded before or just ask someone to give you a copy of it.  
+    > Configure Subscriptions  
+    In this step, you enable the HelloWorld_Publisher device to send MQTT messages to the HelloWorld_Subscriber device.  
+    >> On the group configuration page, choose Subscriptions, and then choose Add Subscription.
+    >> Configure the subscription.
+    >>> Under Select a source, choose Devices, and then choose HelloWorld_Publisher.
+    >>> Under Select a target, choose Devices, and then choose HelloWorld_Subscriber.
+    >>> Choose Next.  
+    ![sb](https://docs.aws.amazon.com/greengrass/latest/developerguide/images/gg-get-started-072.png)  
+    For Topic filter, enter hello/world/pubsub, choose Next, and then choose Finish.  
+    Make sure that the AWS IoT Greengrass daemon is running, as described in Deploy Cloud Configurations to a Core Device.  
+    On the group configuration page, from Actions, choose Deploy.  
+    ![dp](https://docs.aws.amazon.com/greengrass/latest/developerguide/images/gg-get-started-040.png)  
+    > Then you have to Install the AWS IoT Device SDK for Python.
+    Run the following commands to install the AWS IoT Device SDK for Python:  
+    ```shell
+    cd ~
+    git clone https://github.com/aws/aws-iot-device-sdk-python.git
+    cd aws-iot-device-sdk-python
+    sudo python setup.py install
+    ```
 In this lab, we won't use basicDiscovery.py in AWS tutorial. We will use button.py and sensor.py instead, you can find them in this respository. Copy the button.py to your publisher board and sensor.py to your subscriber board. Remember to copy the .py file to the folder that contains the HelloWorld_Publisher and HelloWorld_Subscriber device certificates files.  
 - Edit the button.py&sensor.py, find places "xxxx" and replace them with your own settings.  
 ![example](https://github.com/xupsh/PYNQ_GreenGrass/blob/master/image/Capture.PNG)  
