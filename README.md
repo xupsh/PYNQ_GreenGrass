@@ -28,7 +28,7 @@ AWS IoT Greengrass provides secure, over-the-air software updates of Lambda func
   sudo addgroup --system ggc_group
   ```
 - In our lab, we will have one board used as core, two boards as device (one board used as publisher and the other used as subscriber).
-- > Create your group and set your core board.  
+- > Create your group and set your core board. This part you can refer to [this](https://docs.aws.amazon.com/greengrass/latest/developerguide/gg-config.html).  
   > Sign in to the AWS Management Console on your computer and open the AWS IoT Core console. If this is your first time opening this console, choose Get started.
 Choose Greengrass.  
 ![choose greengrass](https://docs.aws.amazon.com/greengrass/latest/developerguide/images/console-greengrass.png)  
@@ -53,6 +53,37 @@ Each group requires a core, which is a device that manages local IoT processes. 
   > In the previous step, you downloaded two files to your computer:  
   >> greengrass-OS-architecture-1.9.2.tar.gz. This compressed file contains the AWS IoT Greengrass Core software that runs on the core device.  
   >> hash-setup.tar.gz. This compressed file contains security certificates that enable secure communications between AWS IoT and the config.json file that contains configuration information specific to your AWS IoT Greengrass core and the AWS IoT endpoint.
+  > Transfer the two compressed files from your computer to the AWS IoT Greengrass core device.  
+  The commands for example:  
+  ```shell
+  cd path-to-downloaded-files
+  scp greengrass-OS-architecture-1.9.2.tar.gz xilinx@IP-address:/home/xilinx
+  scp hash-setup.tar.gz xilinx@IP-address:/home/xilinx
+  ```
+  > Open a terminal on the AWS IoT Greengrass core device and navigate to the folder that contains the compressed files.  
+  > Decompress the AWS IoT Greengrass Core software and the security resources.  
+  >> The first command creates the /greengrass directory in the root folder of the AWS IoT Greengrass core device (through the -C / argument).  
+  >> The second command copies the certificates into the /greengrass/certs folder and the config.json file into the /greengrass/config folder (through the -C /greengrass argument).
+  ```shell
+  cd path-to-compressed-files
+  sudo tar -xzvf greengrass-OS-architecture-1.9.2.tar.gz -C /
+  sudo tar -xzvf hash-setup.tar.gz -C /greengrass
+  ```  
+  > Download the appropriate ATS root CA certificate. The following example downloads AmazonRootCA1.pem. The wget -O parameter is the capital letter O.  
+  ```shell
+  cd /greengrass/certs/
+  sudo wget -O root.ca.pem https://www.amazontrust.com/repository/AmazonRootCA1.pem
+  ```  
+  You can run the following command to confirm that the root.ca.pem file is not empty:  
+  ```shell
+  cat root.ca.pem
+  ```
+  > Start AWS IoT Greengrass on your core device.  
+  ```shell
+  cd /greengrass/ggc/core/
+  sudo ./greengrassd start
+  ```  
+  You should see a Greengrass successfully started message.  
 - Configure two devices in AWS web.  
 ![Devices](https://docs.aws.amazon.com/greengrass/latest/developerguide/images/gg-get-started-065.5.png)  
 First follow [Create AWS IoT Devices in an AWS IoT Greengrass Group](https://docs.aws.amazon.com/greengrass/latest/developerguide/device-group.html) to create your two devices. And then [Configure Subscriptions](https://docs.aws.amazon.com/greengrass/latest/developerguide/config-subs.html). Now you will see the group has been deployed successfully.  
