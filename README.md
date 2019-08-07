@@ -51,11 +51,8 @@ Each group requires a core, which is a device that manages local IoT processes. 
   ![finish](https://docs.aws.amazon.com/greengrass/latest/developerguide/images/gg-get-started-009.2.png)
   > Download the AWS IoT Greengrass Core software installation package. Choose the CPU architecture and distribution (and operating system, if necessary) that best describe your core device. This time we choose ARMv7l for Raspbian package.
   > In the previous step, you downloaded two files to your computer:  
-greengrass-OS-architecture-1.9.2.tar.gz. This compressed file contains the AWS IoT Greengrass Core software that runs on the core device.
-
-hash-setup.tar.gz. This compressed file contains security certificates that enable secure communications between AWS IoT and the config.json file that contains configuration information specific to your AWS IoT Greengrass core and the AWS IoT endpoint.
-- After this step, you will see the following picture in your AWS monitor. And the core process is running in your core board.
-![Group Created](https://docs.aws.amazon.com/greengrass/latest/developerguide/images/gg-get-started-009.2.png)
+  >> greengrass-OS-architecture-1.9.2.tar.gz. This compressed file contains the AWS IoT Greengrass Core software that runs on the core device.  
+  >> hash-setup.tar.gz. This compressed file contains security certificates that enable secure communications between AWS IoT and the config.json file that contains configuration information specific to your AWS IoT Greengrass core and the AWS IoT endpoint.
 - Configure two devices in AWS web.  
 ![Devices](https://docs.aws.amazon.com/greengrass/latest/developerguide/images/gg-get-started-065.5.png)  
 First follow [Create AWS IoT Devices in an AWS IoT Greengrass Group](https://docs.aws.amazon.com/greengrass/latest/developerguide/device-group.html) to create your two devices. And then [Configure Subscriptions](https://docs.aws.amazon.com/greengrass/latest/developerguide/config-subs.html). Now you will see the group has been deployed successfully.  
