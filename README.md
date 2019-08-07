@@ -95,15 +95,15 @@ Each group requires a core, which is a device that manages local IoT processes. 
     ![RD](https://docs.aws.amazon.com/greengrass/latest/developerguide/images/gg-get-started-068.png)  
     For 1-Click, choose Use Defaults. This option generates a device certificate with attached AWS IoT policy and public and private key.  
     ![1C](https://docs.aws.amazon.com/greengrass/latest/developerguide/images/gg-get-started-069.png)  
-    Create a folder on your computer. Download the certificate and keys for your device into the folder.  
+    Create a folder on your publisher board. Download the certificate and keys for your device into the folder.  
     ![CF](https://docs.aws.amazon.com/greengrass/latest/developerguide/images/gg-get-started-070.png)  
     Make a note of the common hash component in the file names for the HelloWorld_Publisher device certificate and keys (in this example, bcc5afd26d). You need it later. Choose Finish.  
     Decompress the hash-setup.tar.gz file. For example, run the following command:  
     ```shell
     tar -xzf hash-setup.tar.gz
     ```  
-    Choose Add Device and repeat steps 3 - 7 to add a new device to the group.  
-    Name this device HelloWorld_Subscriber. Download the certificates and keys for the device to your computer. Save and decompress them in the same folder that you created for HelloWorld_Publisher.  
+    Choose Add Device and repeat steps to add a new device to the group.  
+    Name this device HelloWorld_Subscriber. Download the certificates and keys for the device to your subscriber board. Save and decompress them in the same folder that you created for HelloWorld_Publisher.  
     Again, make a note of the common hash component in the file names for the HelloWorld_Subscriber device.  
     You should now have two devices in your AWS IoT Greengrass group:  
     ![tg](https://docs.aws.amazon.com/greengrass/latest/developerguide/images/gg-get-started-071.png)  
@@ -116,12 +116,12 @@ Each group requires a core, which is a device that manages local IoT processes. 
     > Configure Subscriptions  
     In this step, you enable the HelloWorld_Publisher device to send MQTT messages to the HelloWorld_Subscriber device.  
     >> On the group configuration page, choose Subscriptions, and then choose Add Subscription.
-    >> Configure the subscription.
+    Configure the subscription.
     >>> Under Select a source, choose Devices, and then choose HelloWorld_Publisher.
-    >>> Under Select a target, choose Devices, and then choose HelloWorld_Subscriber.
-    >>> Choose Next.  
+    Under Select a target, choose Devices, and then choose HelloWorld_Subscriber.
+    Choose Next.  
     ![sb](https://docs.aws.amazon.com/greengrass/latest/developerguide/images/gg-get-started-072.png)  
-    For Topic filter, enter hello/world/pubsub, choose Next, and then choose Finish.  
+    > For Topic filter, enter hello/world/pubsub, choose Next, and then choose Finish.  
     Make sure that the AWS IoT Greengrass daemon is running, as described in Deploy Cloud Configurations to a Core Device.  
     On the group configuration page, from Actions, choose Deploy.  
     ![dp](https://docs.aws.amazon.com/greengrass/latest/developerguide/images/gg-get-started-040.png)  
@@ -132,8 +132,8 @@ Each group requires a core, which is a device that manages local IoT processes. 
     git clone https://github.com/aws/aws-iot-device-sdk-python.git
     cd aws-iot-device-sdk-python
     sudo python setup.py install
-    ```
-In this lab, we won't use basicDiscovery.py in AWS tutorial. We will use button.py and sensor.py instead, you can find them in this respository. Copy the button.py to your publisher board and sensor.py to your subscriber board. Remember to copy the .py file to the folder that contains the HelloWorld_Publisher and HelloWorld_Subscriber device certificates files.  
+    ```  
+    We will use button.py and sensor.py in this lab, you can find them in this respository. Copy the button.py to your publisher board and sensor.py to your subscriber board. Remember to copy the .py file to the folder that contains the HelloWorld_Publisher and HelloWorld_Subscriber device certificates files.  
 - Edit the button.py&sensor.py, find places "xxxx" and replace them with your own settings.  
 ![example](https://github.com/xupsh/PYNQ_GreenGrass/blob/master/image/Capture.PNG)  
 The first 'xxxx' place is where you put your endpoint adress. The other two places are where you put your own device certificates files.  You can refer to [this](https://docs.aws.amazon.com/greengrass/latest/developerguide/test-comms.html) to find what 'xxxx' should be.
