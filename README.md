@@ -31,10 +31,30 @@ AWS IoT Greengrass provides secure, over-the-air software updates of Lambda func
 - > Create your group and set your core board.  
   > Sign in to the AWS Management Console on your computer and open the AWS IoT Core console. If this is your first time opening this console, choose Get started.
 Choose Greengrass.  
-![choose greengrass](https://docs.aws.amazon.com/greengrass/latest/developerguide/images/console-greengrass.png)
+![choose greengrass](https://docs.aws.amazon.com/greengrass/latest/developerguide/images/console-greengrass.png)  
 If you don't see the Greengrass node in the navigation pane, change to an AWS Region that supports AWS IoT Greengrass. For the list of supported regions, see AWS Regions and Endpoints in the AWS General Reference.
-  > 
-After this step, you will see the following picture in your AWS monitor. And the core process is running in your core board.
+  > On the Welcome to AWS IoT Greengrass page, choose Create a Group.  
+An AWS IoT Greengrass group contains settings and other information about its components, such as devices, Lambda functions, and connectors. A group defines how its components can interact with each other.  
+  > On the Set up your Greengrass group page, choose Use easy creation to create a group and an AWS IoT Greengrass core.  
+Each group requires a core, which is a device that manages local IoT processes. A core needs a certificate and keys that allow it to access AWS IoT and an AWS IoT policy that allows it to perform AWS IoT and AWS IoT Greengrass actions. When you choose the Use easy creation option, these security resources are created for you and the core is provisioned in the AWS IoT registry.  
+![set up](https://docs.aws.amazon.com/greengrass/latest/developerguide/images/gg-get-started-005.png)
+  > Enter a name for your group (for example, MyFirstGroup), and then choose Next.  
+  ![name](https://docs.aws.amazon.com/greengrass/latest/developerguide/images/gg-get-started-006.png)
+  > Use the default name for the AWS IoT Greengrass core, and then choose Next.
+  ![default name](https://docs.aws.amazon.com/greengrass/latest/developerguide/images/gg-get-started-007.png)
+  > On the Run a scripted easy Group creation page, choose Create Group and Core.  
+  ![create group and core](https://docs.aws.amazon.com/greengrass/latest/developerguide/images/gg-get-started-008.png)
+  > Download your core's security resources and configuration file. On the confirmation page, under Download and store your Core's security resources, choose Download these resources as a tar.gz.
+  ![download](https://docs.aws.amazon.com/greengrass/latest/developerguide/images/gg-get-started-009.png)
+  > After you download the security resources, choose Finish.  
+  The group configuration page is displayed in the console:  
+  ![finish](https://docs.aws.amazon.com/greengrass/latest/developerguide/images/gg-get-started-009.2.png)
+  > Download the AWS IoT Greengrass Core software installation package. Choose the CPU architecture and distribution (and operating system, if necessary) that best describe your core device. This time we choose ARMv7l for Raspbian package.
+  > In the previous step, you downloaded two files to your computer:  
+greengrass-OS-architecture-1.9.2.tar.gz. This compressed file contains the AWS IoT Greengrass Core software that runs on the core device.
+
+hash-setup.tar.gz. This compressed file contains security certificates that enable secure communications between AWS IoT and the config.json file that contains configuration information specific to your AWS IoT Greengrass core and the AWS IoT endpoint.
+- After this step, you will see the following picture in your AWS monitor. And the core process is running in your core board.
 ![Group Created](https://docs.aws.amazon.com/greengrass/latest/developerguide/images/gg-get-started-009.2.png)
 - Configure two devices in AWS web.  
 ![Devices](https://docs.aws.amazon.com/greengrass/latest/developerguide/images/gg-get-started-065.5.png)  
