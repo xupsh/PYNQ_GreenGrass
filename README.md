@@ -1,24 +1,17 @@
 # AWS IOT LAB
 ## About this Lab
-After finishing the following steps, you will build a cluster using PYNQ-Z2 in which devices can communicate with each other and work together. You can press the buttons in publisher board and the leds in subscriber board can glitter accordingly.
+In this lab, you will go through the process of  how to deploy AWS IoT Greengrass to PYNQ-Z2. 
 ## What is AWS Greengrass
-AWS IoT Greengrass is software that extends cloud capabilities to local devices. This enables devices to collect and analyze data closer to the source of information, react autonomously to local events, and communicate securely with each other on local networks. AWS IoT Greengrass developers can use AWS Lambda functions and prebuilt connectors to create serverless applications that are deployed to devices for local execution.  
+AWS IoT Greengrass is software that extends cloud capabilities to local devices. This enables devices to collect and analyze data closer to the source of information, react autonomously to local events, and communicate securely with each other on local networks. AWS IoT Greengrass developers can use AWS Lambda functions and prebuilt connectors to create serverless applications that are deployed to devices for local execution. 
 The following diagram shows the basic architecture of AWS IoT Greengrass.
 ![](image/greengrass.png)
-AWS IoT Greengrass makes it possible for customers to build IoT devices and application logic. Specifically, AWS IoT Greengrass provides cloud-based management of application logic that runs on devices. Locally deployed Lambda functions and connectors are triggered by local events, messages from the cloud, or other sources.  
-In AWS IoT Greengrass, devices securely communicate on a local network and exchange messages with each other without having to connect to the cloud. AWS IoT Greengrass provides a local pub/sub message manager that can intelligently buffer messages if connectivity is lost so that inbound and outbound messages to the cloud are preserved.  
-AWS IoT Greengrass protects user data:  
-Through the secure authentication and authorization of devices.  
-Through secure connectivity in the local network.  
-Between local devices and the cloud.  
-Device security credentials function in a group until they are revoked, even if connectivity to the cloud is disrupted, so that the devices can continue to securely communicate locally.  
-AWS IoT Greengrass provides secure, over-the-air software updates of Lambda functions.
+Please refer to [What Is AWS IoT Greengrass?](https://docs.aws.amazon.com/greengrass/latest/developerguide/what-is-gg.html) for more information about AWS IoT Greengrass.
 
 ## Preparation
-- > 3 PYNQ-Z2  
-  > AWS account  
-  > 1 switch  
-![xg](https://github.com/xupsh/PYNQ_GreenGrass/blob/master/image/IMG_20190807_104705.jpg)
+> 3 PYNQ-Z2 boards ( PYNQ v2.3)
+> AWS account 
+> 1 switch that has internet access
+![](image/IMG_20190807_104705.jpg)
 ## Step by Step
 - The following steps you can refer to [this](https://pynq.readthedocs.io/en/v2.4/getting_started/pynq_z2_setup.html).
 - Conncet your boards and your pc to your switch through LAN(In your switch). Conncet WAN(In your switch) to the Internet.
