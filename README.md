@@ -4,7 +4,7 @@ After finishing the following steps, you will build a cluster using PYNQ-Z2 in w
 ## What is AWS Greengrass
 AWS IoT Greengrass is software that extends cloud capabilities to local devices. This enables devices to collect and analyze data closer to the source of information, react autonomously to local events, and communicate securely with each other on local networks. AWS IoT Greengrass developers can use AWS Lambda functions and prebuilt connectors to create serverless applications that are deployed to devices for local execution.  
 The following diagram shows the basic architecture of AWS IoT Greengrass.
-![Geengrass](https://github.com/wutianze/PYNQ_GreenGrass/blob/master/image/greengrass.png)
+![](image/greengrass.png)
 AWS IoT Greengrass makes it possible for customers to build IoT devices and application logic. Specifically, AWS IoT Greengrass provides cloud-based management of application logic that runs on devices. Locally deployed Lambda functions and connectors are triggered by local events, messages from the cloud, or other sources.  
 In AWS IoT Greengrass, devices securely communicate on a local network and exchange messages with each other without having to connect to the cloud. AWS IoT Greengrass provides a local pub/sub message manager that can intelligently buffer messages if connectivity is lost so that inbound and outbound messages to the cloud are preserved.  
 AWS IoT Greengrass protects user data:  
@@ -13,6 +13,7 @@ Through secure connectivity in the local network.
 Between local devices and the cloud.  
 Device security credentials function in a group until they are revoked, even if connectivity to the cloud is disrupted, so that the devices can continue to securely communicate locally.  
 AWS IoT Greengrass provides secure, over-the-air software updates of Lambda functions.
+
 ## Preparation
 - > 3 PYNQ-Z2  
   > AWS account  
@@ -24,7 +25,7 @@ AWS IoT Greengrass provides secure, over-the-air software updates of Lambda func
 - Conncet your boards to your pc through usb using serial link. Run 
   ```shell
   hostname -I 
-  ```  
+  ```
   in the terminals opened for boards and find your boards' ips.
 - Close the serial link windows and using ssh to connect to your boards.
 - Run the following commands on all boards.
@@ -73,12 +74,12 @@ AWS IoT Greengrass provides secure, over-the-air software updates of Lambda func
   cd path-to-compressed-files
   sudo tar -xzvf greengrass-OS-architecture-1.9.2.tar.gz -C /
   sudo tar -xzvf hash-setup.tar.gz -C /greengrass
-  ```  
+  ```
 - Download the appropriate ATS root CA certificate. The following example downloads AmazonRootCA1.pem. The wget -O parameter is the capital letter O.  
   ```shell
   cd /greengrass/certs/
   sudo wget -O root.ca.pem https://www.amazontrust.com/repository/AmazonRootCA1.pem
-  ```  
+  ```
   You can run the following command to confirm that the root.ca.pem file is not empty:  
   ```shell
   cat root.ca.pem
@@ -87,7 +88,7 @@ AWS IoT Greengrass provides secure, over-the-air software updates of Lambda func
   ```shell
   cd /greengrass/ggc/core/
   sudo ./greengrassd start
-  ```  
+  ```
   You should see a Greengrass successfully started message.  
 - Configure two devices in AWS web. This part you can refer to [this](https://docs.aws.amazon.com/greengrass/latest/developerguide/module4.html)   
 - First Create AWS IoT Devices in an AWS IoT Greengrass Group
@@ -106,7 +107,7 @@ AWS IoT Greengrass provides secure, over-the-air software updates of Lambda func
 - Decompress the hash-setup.tar.gz file. For example, run the following command:  
     ```shell
     tar -xzf hash-setup.tar.gz
-    ```  
+    ```
 - Choose Add Device and repeat steps to add a new device to the group.  
   Name this device HelloWorld_Subscriber. Download the certificates and keys for the device to your subscriber board. Save and decompress them in the same folder that you created for HelloWorld_Publisher.  
   Again, make a note of the common hash component in the file names for the HelloWorld_Subscriber device.  
@@ -116,7 +117,7 @@ AWS IoT Greengrass provides secure, over-the-air software updates of Lambda func
     ```shell
     cd path-to-folder-containing-device-certificates
     curl -o ./root-ca-cert.pem https://www.amazontrust.com/repository/AmazonRootCA1.pem
-    ```  
+    ```
   If you meet some net issues here, don't be afraid, you can use the root-ca-cert.pem you downloaded before or just ask someone to give you a copy of it.  
 - Configure Subscriptions  
   In this step, you enable the HelloWorld_Publisher device to send MQTT messages to the HelloWorld_Subscriber device.  
@@ -137,7 +138,7 @@ AWS IoT Greengrass provides secure, over-the-air software updates of Lambda func
     git clone https://github.com/aws/aws-iot-device-sdk-python.git
     cd aws-iot-device-sdk-python
     sudo python setup.py install
-    ```  
+    ```
 - We will use button.py and sensor.py in this lab, you can find them in this respository. Copy the button.py to your publisher board and sensor.py to your subscriber board. Remember to copy the .py file to the folder that contains the HelloWorld_Publisher and HelloWorld_Subscriber device certificates files.  
 - Edit the button.py&sensor.py, find places "xxxx" and replace them with your own settings.  
 ![example](https://github.com/xupsh/PYNQ_GreenGrass/blob/master/image/Capture.PNG)  
