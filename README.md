@@ -10,8 +10,9 @@ Please refer to [What Is AWS IoT Greengrass?](https://docs.aws.amazon.com/greeng
 ## Preparation
 > 3 PYNQ-Z2 boards ( PYNQ v2.3)
 > AWS account 
-> 1 switch that has internet access
+> 1 switch
 ![](image/IMG_20190807_104705.jpg)
+
 ## Step by Step
 - The following steps you can refer to [this](https://pynq.readthedocs.io/en/v2.4/getting_started/pynq_z2_setup.html).
 - Conncet your boards and your pc to your switch through LAN(In your switch). Conncet WAN(In your switch) to the Internet.
