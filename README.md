@@ -150,7 +150,8 @@ sudo addgroup --system ggc_group
   sudo python3 sensor.py
   ```
   Wait a minute until the two processes is up.  
-  7. Now when you press the button in publisher you can see leds in subscriber glitter. 
+  7. Now you can see the led will change with the temperature.  
+  ![tm](https://github.com/xupsh/PYNQ_GreenGrass/blob/master/image/IMG_20190809_164954.jpg)
 - ### Also you can build a subscriber in AWS cloud.  
   1. Search AWS IoT in *Services*. Choose *Test* and then *Subscribe to a topic*, fill the topic with yours(here hello/world/pubsub). 
   2. In *MQTT payload display*, we choose the second *Display payloads as strings*. 
