@@ -10,14 +10,13 @@ Please refer to [What Is AWS IoT Greengrass?](https://docs.aws.amazon.com/greeng
 ## Preparation
 - 3 PYNQ-Z2 boards ( PYNQ v2.3)
 - AWS account 
-- 1 switch
+- 1 router
 
-Connect all 3 PYNQ-Z2 boards to the switch
+Conncet the 3 PYNQ-Z2 boards and host PC to LAN ports of router . Conncet WAN port of router to the Internet.
 ![](image/IMG_20190807_104705.jpg)
 
 ## Step by Step
 - The following steps you can refer to [this](https://pynq.readthedocs.io/en/v2.4/getting_started/pynq_z2_setup.html).
-- Conncet your boards and your pc to your switch through LAN(In your switch). Conncet WAN(In your switch) to the Internet.
 - Conncet your boards to your pc through usb using serial link. Run 
   ```shell
   hostname -I 
