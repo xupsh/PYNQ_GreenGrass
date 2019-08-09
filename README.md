@@ -8,9 +8,10 @@ The following diagram shows the basic architecture of AWS IoT Greengrass.
 Please refer to [What Is AWS IoT Greengrass?](https://docs.aws.amazon.com/greengrass/latest/developerguide/what-is-gg.html) for more information about AWS IoT Greengrass.
 
 ## Preparation
-> 3 PYNQ-Z2 boards ( PYNQ v2.3)
-> AWS account 
-> 1 switch
+- 3 PYNQ-Z2 boards ( PYNQ v2.3)
+- AWS account 
+- 1 switch
+Connect all 3 PYNQ-Z2 boards to the switch
 ![](image/IMG_20190807_104705.jpg)
 
 ## Step by Step
