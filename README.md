@@ -11,6 +11,7 @@ Please refer to [What Is AWS IoT Greengrass?](https://docs.aws.amazon.com/greeng
 - 3 PYNQ-Z2 boards ( PYNQ v2.3)
 - AWS account 
 - 1 switch
+
 Connect all 3 PYNQ-Z2 boards to the switch
 ![](image/IMG_20190807_104705.jpg)
 
