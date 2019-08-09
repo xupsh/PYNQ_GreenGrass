@@ -72,8 +72,8 @@ while 1:
     print(payload,'degree Celsius')
     #payload = '{ "ip_source: "'+ local_ip +'","timestamp": "' + now_str + '","instruction": ' + btn + ' }'
     #payload = btn
-    if btn != '0':
-        myMQTTClient.publish("hello/world/pubsub", payload, 0)
+    #if btn != '0':
+    myMQTTClient.publish("hello/world/pubsub", payload, 0)
     sleep(0.2)
 
 
