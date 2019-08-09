@@ -13,7 +13,7 @@ Please refer to [What Is AWS IoT Greengrass?](https://docs.aws.amazon.com/greeng
 - 1 router
 
 Conncet the 3 PYNQ-Z2 boards and host PC to LAN ports of router. Conncet WAN port of router to the Internet.
-![](https://github.com/xupsh/PYNQ_GreenGrass/blob/master/image/Screenshot_20190809-171724.jpg)
+![](https://github.com/xupsh/PYNQ_GreenGrass/blob/master/image/ttt4.jpg)
 
 ## Step by Step
 - ### Connect & Preparation
