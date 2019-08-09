@@ -22,11 +22,10 @@ Conncet the 3 PYNQ-Z2 boards and host PC to LAN ports of router. Conncet WAN por
 sudo adduser --system ggc_user
 sudo addgroup --system ggc_group
 ```
-  2. Conncet your boards to your pc through usb using serial link. Run
+  2. Conncet your boards to your pc through usb using serial link. Run the following code in the terminals opened for boards and find your boards' ips.
   ```shell
   hostname -I
-  ```
-  in the terminals opened for boards and find your boards' ips.
+  ```  
   3. Close the serial link windows and using ssh to connect to your boards.
 - ### Create Group
   ***Tip: In our lab, we will have one board used as core, two boards as device (one board used as publisher and the other used as subscriber).***  
@@ -155,7 +154,8 @@ sudo addgroup --system ggc_group
 - ### Also you can build a subscriber in AWS cloud.  
   1. Search AWS IoT in *Services*. Choose *Test* and then *Subscribe to a topic*, fill the topic with yours(here hello/world/pubsub). 
   2. In *MQTT payload display*, we choose the second *Display payloads as strings*. 
-  3. Subscribe to the topic and you will find a new tip on the left, enter it and you can watch the information of the button actions.
+  3. Subscribe to the topic and you will find a new tip on the left, enter it and you can watch the information of the button actions.  
+  ![aws](https://github.com/xupsh/PYNQ_GreenGrass/blob/master/image/Capture.PNG)
 ## Further
 Now you have learned how to use aws greengrass, you can replace the "hello world" function with something cool. Maybe you can refer to [this](https://github.com/wutianze/PYNQ_GreenGrass/blob/master/demo-learning.md).
 ## Reference
