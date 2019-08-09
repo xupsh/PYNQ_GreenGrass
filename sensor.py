@@ -36,12 +36,14 @@ def customCallback(client, userdata, message):
     print("--------------\n\n")
 
     #button message:1/2/3/4
-    global btn, i
+    global tmp, i
     try:
-        btn = int(message.payload)
+        tmp = float(message.payload)
+        print(tmp)
     except Exception as e:
     	print(e)
     #btn1 increase, btn2 decrease
+    '''
     if (btn == 1):
         #sleep(0.2)
         #ledbar.write_level(i,2,1)
@@ -55,6 +57,7 @@ def customCallback(client, userdata, message):
     elif (btn == 3):
         print("btn == 3\n")
         #ledbar.reset()
+    '''
     base.leds[btn-1].on()
     sleep(0.2)
     base.leds[btn-1].off()
